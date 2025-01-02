@@ -20,6 +20,12 @@ local ThePrimeagenGroup = augroup('ThePrimeagen', {})
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
+vim.api.nvim_exec([[
+  autocmd FileType cpp nnoremap <F9> :w<CR>:!g++ -std=c++17 % -o %:r<CR>
+  autocmd FileType cpp nnoremap <F10> :!alacritty -e ./%:r<CR>
+]], false)
+
+
 function R(name)
     require("plenary.reload").reload_module(name)
 end
