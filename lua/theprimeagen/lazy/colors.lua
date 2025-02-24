@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "kanagawa"
+    color = color or "gruber-darker"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -8,20 +8,14 @@ end
 
 return {
     {
-        "rebelot/kanagawa.nvim",
+        "thimc/gruber-darker.nvim",
         lazy = false,
         config = function()
-            require("kanagawa").setup({
-                transparent = true, -- Set to true for a transparent background
-                dimInactive = true, -- Dim inactive window
-                styles = {
-                    comments = { italic = false },
-                    keywords = { italic = false },
-                    sidebars = "dark",
-                    floats = "dark",
-                },
+            require('gruber-darker').setup({
+                transparent = true, -- removes the background
             })
             ColorMyPencils() -- Call the function to apply the colorscheme
         end,
     },
 }
+

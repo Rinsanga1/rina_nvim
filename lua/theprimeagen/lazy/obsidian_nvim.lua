@@ -21,11 +21,15 @@ return {
     workspaces = {
       {
         name = "rina_study",
-        path = "/home/rina/obsidian_vault/rina_study",
+        path = "/home/rina/obsidian/rina_study",
       },
       {
         name = "rina_work",
-        path = "/home/rina/obsidian_vault/rina_work",
+        path = "/home/rina/obsidian/rina_work",
+      },
+      {
+        name = "dailies",
+        path = "/home/dev/obsidian/daily_notes",
       },
     },
   },
