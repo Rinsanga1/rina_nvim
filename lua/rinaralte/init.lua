@@ -1,7 +1,7 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
-require("theprimeagen.lazy_init")
-require("theprimeagen.transparency")
+require("rinaralte.set")
+require("rinaralte.remap")
+require("rinaralte.lazy_init")
+require("rinaralte.transparency")
 
 -- DO.not
 -- DO NOT INCLUDE THIS
@@ -15,7 +15,7 @@ require("theprimeagen.transparency")
 -- DO.not
 
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
+local RinaralteGroup = augroup('Rinaralte', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -48,13 +48,13 @@ autocmd('TextYankPost', {
 })
 
 autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
+    group = RinaralteGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
 autocmd('LspAttach', {
-    group = ThePrimeagenGroup,
+    group = RinaralteGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
