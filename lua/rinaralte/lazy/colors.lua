@@ -7,15 +7,14 @@ function ColorMyPencils(color)
 end
 
 return {
-    {
-        "thimc/gruber-darker.nvim",
-        lazy = false,
-        config = function()
-            require('gruber-darker').setup({
-                transparent = true, -- removes the background
-            })
-            ColorMyPencils() -- Call the function to apply the colorscheme
-        end,
-    },
+  {
+    'RostislavArts/naysayer.nvim',
+    priority = 1000,
+    lazy = false,
+    config = function()
+      vim.cmd.colorscheme('naysayer')
+    end,
+  },
 }
+
 
