@@ -5,4 +5,6 @@ return {
   },
 
   "eandrju/cellular-automaton.nvim",
+
+  "nvim-flutter/flutter-tools.nvim",
 }

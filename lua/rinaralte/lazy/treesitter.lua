@@ -1,8 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-        require("nvim-treesitter.configs").setup({
+        local configs = require("nvim-treesitter.configs")
+        configs.setup({
             -- A list of parser names, or "all"
             ensure_installed = {
                 "vimdoc", "javascript", "typescript", "c", "lua", "rust",
